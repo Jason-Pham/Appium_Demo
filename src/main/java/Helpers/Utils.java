@@ -8,7 +8,6 @@ import java.util.Properties;
 public class Utils {
     public static String getOTP(String code) {
         //Properties OTP;
-
         //OTP = PropertiesLoader.load_OTP_Properties();
 
         //String otpKeyStr = OTP.getProperty(kindOfOTP); // <- this 2FA secret key.
