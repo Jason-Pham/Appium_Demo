@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 public class UIAutomatorTest extends base {
     public static void main(String[] args) throws MalformedURLException {
-        AndroidDriver<AndroidElement> driver = base.Capabilities();
+        AndroidDriver<AndroidElement> driver = base.Capabilities("emulator");
 
         //driver.findElementByAndroidUIAutomator("attribute(value)").click();
         driver.findElementByAndroidUIAutomator("text(\"Views\")").click();

@@ -7,8 +7,8 @@ import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 public class miscelleanous extends base {
-    public static void main(String[] args) throws MalformedURLException, InterruptedException {
-        AndroidDriver<AndroidElement> driver = base.Capabilities();
+    public static void main(String[] args) throws MalformedURLException {
+        AndroidDriver<AndroidElement> driver = base.Capabilities("emulator");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         System.out.println(driver.currentActivity());

@@ -7,18 +7,20 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class base {
-    public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
+class base {
+    static AndroidDriver<AndroidElement> Capabilities(String device) throws MalformedURLException {
         File f = new File("src/ApiDemos-debug.apk");
 
         DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setCapability(MobileCapabilityType.DEVICE_NAME, "XL");
+
+        if(device.equals("emulator"))
+            cap.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel2");
+        else if(device.equals("real"))
+            cap.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
+
         cap.setCapability(MobileCapabilityType.APP, f.getAbsolutePath());
 
-        AndroidDriver<AndroidElement> driver =
-                new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
-
-        return driver;
-        //AndroidUIAutomator
+        return new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+        /* AndroidUIAutomator */
     }
 }
