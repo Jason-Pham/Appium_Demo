@@ -12,6 +12,7 @@ public class scrolling extends base {
         AndroidDriver<AndroidElement> driver = base.Capabilities("emulator");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
+        //Scrolling feature to support small screen and small resolution devices
         Dimension size = driver.manage().window().getSize();
         int x = size.getWidth() / 2;
         int start = (int) (size.getHeight() * 0.60);
